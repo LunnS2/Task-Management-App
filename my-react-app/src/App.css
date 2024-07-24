@@ -1,0 +1,185 @@
+/*Imported Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Nunito:wght@600&family=Poppins:wght@700&display=swap');
+/* General Styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: grid;
+  flex-direction: column;
+  height: 100dvh;
+} 
+html {
+  font-family: 'Nunito', sans-serif;
+}
+button {
+  font-family: 'Nunito', sans-serif;
+  
+}
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  text-align: left;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+  font-family: 'Poppins', sans-serif;
+}
+footer {
+  font-family: 'Nunito', sans-serif;
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+.task {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+/* Theme Styling */
+:root {
+  --padding: 0 16px;
+  --background-light-color: #ffffff;
+  --background-dark-color: #8d8d8d;
+  --background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  --header-light-bg: #c6c6c6d5;
+  --header-dark-bg: #4b4b4b;
+  --footer-light-bg: #c6c6c6d5;
+  --footer-dark-bg: #4b4b4b;
+  --header-light-color: #000000;
+  --header-dark-color: #ffffff;
+  --footer-light-color: #000000;
+  --footer-dark-color: #ffffff;
+  --task-light-bg: #c6c6c6d5;
+  --task-dark-bg: #4b4b4b;
+  --salmon-bg: #DBB5B5;
+}
+
+/* Light Theme */
+#root .light {
+  background-color: var(--background-light-color);
+  background-image: var(--background-image);
+}
+/* Dark Theme */
+#root .dark {
+  background-color: var(--background-dark-color);
+  background-image: var(--background-image);
+}
+.light header {
+  background-color: var(--header-light-bg);
+}
+.dark header {
+  background-color: var(--header-dark-bg);
+}
+.light header h1 {
+  color: var(--header-light-color);
+}
+.dark header h1 {
+  color: var(--header-dark-color);
+}
+.light footer {
+  background-color: var(--footer-light-bg);
+  color: var(--footer-light-color);
+}
+.dark footer {
+  background-color: var(--footer-dark-bg);
+  color: var(--footer-dark-color-color);
+}
+.light .task {
+  background: var(--task-light-bg);
+  border-radius: 7px;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.dark .task {
+  background: var(--task-dark-bg);
+  border-radius: 7px;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+.task h1{
+  grid-column: 1;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.task p {
+  font-family: 'Lato', sans-serif;
+  grid-column: 1;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-weight: normal;
+}
+#schedule {
+  grid-row: 1;
+  position: relative;
+  justify-self: left;
+  padding: 2px;
+  color: #000000;
+  background-color: white;
+  font-family: 'Nunito', sans-serif;
+}
+.task button {
+  grid-column: 2;
+  justify-self: end;
+  position: relative;
+  margin-right: 10px;
+  border: none;
+  width: 44px;
+  height: 26px;
+  cursor: pointer;
+  outline: none;
+}
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: var(--background-light-color);
+  padding: 15px;
+  border-radius: 7px;
+}
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form select {
+  background-color: var(--background-light-color);
+}
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: var(--salmon-bg);
+  color: var(--background-light-color);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
