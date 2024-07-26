@@ -65,6 +65,8 @@ footer {
   --task-light-bg: #c6c6c6d5;
   --task-dark-bg: #4b4b4b;
   --salmon-bg: #DBB5B5;
+  --light-shadow: 0 1px 5px rgb(125, 125, 125);
+  --dark-shadow: 0 1px 5px rgb(55, 55, 55);
 }
 
 /* Light Theme */
@@ -79,9 +81,11 @@ footer {
 }
 .light header {
   background-color: var(--header-light-bg);
+  box-shadow: var(--light-shadow);
 }
 .dark header {
   background-color: var(--header-dark-bg);
+  box-shadow: var(--dark-shadow);
 }
 .light header h1 {
   color: var(--header-light-color);
@@ -92,13 +96,16 @@ footer {
 .light footer {
   background-color: var(--footer-light-bg);
   color: var(--footer-light-color);
+  box-shadow: var(--light-shadow);
 }
 .dark footer {
   background-color: var(--footer-dark-bg);
   color: var(--footer-dark-color-color);
+  box-shadow: var(--dark-shadow);
 }
 .light .task {
   background: var(--task-light-bg);
+  box-shadow: var(--light-shadow);
   border-radius: 7px;
   padding: 10px;
   width: 240px;
@@ -107,6 +114,7 @@ footer {
 }
 .dark .task {
   background: var(--task-dark-bg);
+  box-shadow: var(--dark-shadow);
   border-radius: 7px;
   padding: 10px;
   width: 240px;
@@ -140,20 +148,29 @@ footer {
 }
 .task button {
   grid-column: 2;
-  justify-self: end;
-  position: relative;
-  margin-right: 10px;
+  justify-self:end;
+  position: absolute;
   border: none;
   width: 44px;
   height: 26px;
   cursor: pointer;
   outline: none;
 }
-form {
+.light form {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
   background: var(--background-light-color);
+  box-shadow: var(--light-shadow);
+  padding: 15px;
+  border-radius: 7px;
+}
+.dark form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: var(--background-light-color);
+  box-shadow: var(--dark-shadow);
   padding: 15px;
   border-radius: 7px;
 }
