@@ -146,7 +146,17 @@ footer {
   background-color: white;
   font-family: 'Nunito', sans-serif;
 }
-.task button {
+.task button .delete {
+  grid-column: 2;
+  justify-self:end;
+  position: absolute;
+  border: none;
+  width: 44px;
+  height: 26px;
+  cursor: pointer;
+  outline: none;
+}
+.task button .edit {
   grid-column: 2;
   justify-self:end;
   position: absolute;

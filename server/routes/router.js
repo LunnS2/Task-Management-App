@@ -34,6 +34,33 @@ router.delete('/tasks/:id', async (req, res) => {
       console.error(err.message);
     }
   });
+  
+router.patch('/tasks/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updates = req.body;
+    
+    const setString = Object.keys(updates).map((key, index) => 
+    `${key} = $${index + 1}`).join(', ');
+    
+    const values = Object.values(updates);
+
+    const result = await db.query(
+      `UPDATE tasks SET ${setString} WHERE id = $${values.length + 1} RETURNING *`,
+      [...values, id]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({error: 'Task not found'});
+    }
+
+    res.json(result.rows[0]);
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: 'Internal server error'});
+  }
+});
 
   return router;
 

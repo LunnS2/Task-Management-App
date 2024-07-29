@@ -26,7 +26,7 @@ function App() {
 
   async function addTask(newTask) {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_MY_API}/tasks/`, newTask);
+      const response = await axios.post(`${import.meta.env.VITE_MY_API}/tasks`, newTask);
       setTasks((prevTasks) => [...prevTasks, response.data]);
     } catch (error) {
       console.error('Error adding task:', error);
@@ -39,6 +39,15 @@ function App() {
       setTasks((prevTasks) => prevTasks.filter((taskItem) => taskItem.id !== id));
     } catch (error) {
       console.error('Error deleting task:', error);
+    }
+  }
+
+  async function updateTask(id, updatedTask) {
+    try {
+      const response = await axios.patch(`${import.meta.env.VITE_MY_API}/tasks/${id}`, updatedTask)
+      setTasks((prevTasks) => prevTasks.map((taskItem) => taskItem.id === id ? response.data : taskItem));
+    } catch (error) {
+      console.error('Error updating task:', error);
     }
   }
 
@@ -56,6 +65,7 @@ function App() {
             content={taskItem.content}
             days={taskItem.days}
             onDelete={deleteTask}
+            onUpdate={updateTask}
           />
         );
       })}
