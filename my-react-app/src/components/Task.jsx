@@ -55,14 +55,14 @@ function Task(props) {
           </select>
         </div>
       ) : (
-        <div>
+        <div className="container">
           <h1>{task.title}</h1>
           <p>{task.content}</p>
           <p className="schedule">{task.days}</p>
         </div>
       )}
-      <button className="delete" type="button" onClick={handleDelete}>Delete</button>
       <button className="edit" type="button" onClick={handleEdit}>{isEditing ? 'Save' : 'Edit'}</button>
+      <button className="delete" type="button" onClick={handleDelete}>Delete</button>
     </div>
   );
 }
