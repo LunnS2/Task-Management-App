@@ -26,11 +26,13 @@ body {
   box-sizing: border-box;
 }
 header {
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
   top: 0;
   margin: 0;
   padding: 0;
-  font-weight: 200;
   font-family: 'Poppins', sans-serif;
 }
 footer {
@@ -58,7 +60,7 @@ footer {
   --padding: 0 16px;
   --background-light-color: #ffffff;
   --background-dark-color: #8d8d8d;
-  --background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  --background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
   --header-light-bg: #c6c6c6d5;
   --header-dark-bg: #4b4b4b;
   --footer-light-bg: #c6c6c6d5;
@@ -93,9 +95,11 @@ footer {
   box-shadow: var(--dark-shadow);
 }
 .light header h1 {
+  display: block;
   color: var(--header-light-color);
 }
 .dark header h1 {
+  display: block;
   color: var(--header-dark-color);
 }
 .light footer {
@@ -223,4 +227,9 @@ form button {
   height: 36px;
   cursor: pointer;
   outline: none;
+}
+
+.theme-toggle-container {
+  position: absolute;
+  left: 10px; 
 }

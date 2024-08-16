@@ -6,7 +6,6 @@ import CreateTaskArea from "./Create-Task-Area";
 import Task from "./Task";
 import axios from "axios";
 import { ThemeContext } from './ThemeContext';
-import ThemeToggleButton from './ThemeToggleButton';
 
 function App() {
   const {theme} = useContext(ThemeContext);
@@ -54,12 +53,11 @@ function App() {
   return (
     <div className={theme}>
       <Header />
-      <ThemeToggleButton />
       <CreateTaskArea onAdd={addTask} />
       {tasks.map((taskItem, index) => {
         return (
           <Task
-            key={index}
+            key={taskItem.id}
             id={taskItem.id}
             title={taskItem.title}
             content={taskItem.content}
